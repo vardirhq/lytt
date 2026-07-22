@@ -1,0 +1,20 @@
+[package]
+name = "lytt"
+version = "0.1.0"
+edition = "2021"
+description = "A small project-aware localhost port inspector."
+license = "MIT"
+repository = "https://github.com/vardirhq/lytt"
+homepage = "https://github.com/vardirhq/lytt"
+readme = "README.md"
+keywords = ["cli", "ports", "localhost", "developer-tools"]
+categories = ["command-line-utilities", "development-tools"]
+
+[[bin]]
+name = "lytt"
+path = "src/main.rs"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
