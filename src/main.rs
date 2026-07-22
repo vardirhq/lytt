@@ -275,7 +275,12 @@ mod tests {
     #[test]
     fn parses_force_kill() {
         assert_eq!(
-            parse_args(["kill".to_string(), "3000".to_string(), "--force".to_string()]).unwrap(),
+            parse_args([
+                "kill".to_string(),
+                "3000".to_string(),
+                "--force".to_string()
+            ])
+            .unwrap(),
             Command::Kill {
                 port: 3000,
                 force: true
