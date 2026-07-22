@@ -46,7 +46,8 @@ fn process_has_socket(pid: u32, inode: &str) -> bool {
 }
 
 fn read_process(pid: u32) -> ProcessInfo {
-    let command = read_cmdline(pid).unwrap_or_else(|| read_comm(pid).unwrap_or_else(|| format!("pid {pid}")));
+    let command =
+        read_cmdline(pid).unwrap_or_else(|| read_comm(pid).unwrap_or_else(|| format!("pid {pid}")));
     let cwd = fs::read_link(format!("/proc/{pid}/cwd")).ok();
 
     ProcessInfo {
